@@ -158,7 +158,7 @@
 
         try {
         // 📡 Llamada a tu API
-        const res = await fetch("http://localhost:3000/personajes");
+        const res = await fetch("https://api-gravity-falls.onrender.com/personajes");
         const json = await res.json();
         const personajes = json.personajes;
 

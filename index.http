@@ -1,0 +1,14 @@
+POST /personajes HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+    "nombre": "Fiddleford McGucket",
+    "edad": 68,
+    "altura": 1.54,
+    "frase": "¡Mi mente está llena de grillos!",
+    "imagen": "https://i.pinimg.com/736x/6a/43/45/6a434547031546c16c61124e8ff61d82.jpg",
+    "id_tipo": 10,
+    "id_nivel": 6,
+    "id_pueblo": 1
+}

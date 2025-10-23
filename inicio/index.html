@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>API de Personajes de Gravity Falls</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4bb814",
+            "background-light": "#f6f8f6",
+            "background-dark": "#162111",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-background-dark font-display">
+  <div class="relative flex h-auto min-h-screen w-full flex-col bg-[#1A2E2A] overflow-x-hidden">
+    <!-- Encabezado -->
+    <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4"
+      style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://i5.walmartimages.com/seo/Poster-16x24inch-Poster-Print-Frameless-Art-Gift-40x60cm-Paper_868fcad6-d2e4-40d2-a183-647320d460b2.e7b9649dc118bb33eab680d2e5591175.jpeg");'>
+      <div class="text-center">
+        <h1 class="text-white text-4xl font-black" style="color: #FFD700;">API de Personajes de Gravity Falls</h1>
+        <h2 class="text-[#F5F5DC] text-lg font-normal">Explora los misteriosos personajes del enigmático pueblo.</h2>
+      </div>
+    </div>
+
+    <!-- Sección de explicación -->
+    <div class="flex flex-col gap-10 px-6 py-12 bg-[#1A2E2A]">
+      <div class="max-w-5xl mx-auto text-center">
+        <h1 class="text-[#FFD700] text-[32px] font-bold">¿Cómo funciona?</h1>
+        <p class="text-[#F5F5DC] mt-4">
+          Esta API te permite consultar e incluso agregar nuevos personajes al universo de Gravity Falls.  
+          A continuación verás las tablas con los tipos de poderes, niveles y pueblos disponibles antes del ejemplo de solicitud.
+        </p>
+      </div>
+
+      <!-- Tablas informativas -->
+      <div class="max-w-5xl mx-auto grid gap-10 text-[#F5F5DC]">
+        <!-- Tipos de Poder -->
+        <div>
+          <h2 class="text-[#7DF9FF] text-xl font-semibold mb-3 text-center">Tipos de Poder</h2>
+          <table class="w-full border border-[#4A3F35] text-sm text-left rounded-lg overflow-hidden">
+            <thead class="bg-[#4A3F35]/40">
+              <tr>
+                <th class="p-3">ID</th>
+                <th class="p-3">Nombre</th>
+                <th class="p-3">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3">1</td><td class="p-3">Magia</td><td class="p-3">Uso de energía mística</td></tr>
+              <tr><td class="p-3">2</td><td class="p-3">Ciencia</td><td class="p-3">Basado en tecnología avanzada</td></tr>
+              <tr><td class="p-3">3</td><td class="p-3">Mental</td><td class="p-3">Control psíquico o telepatía</td></tr>
+              <tr><td class="p-3">4</td><td class="p-3">Físico</td><td class="p-3">Fuerza, agilidad o resistencia especial</td></tr>
+              <tr><td class="p-3">11</td><td class="p-3">Sin poder</td><td class="p-3">No posee habilidades especiales</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Niveles de Poder -->
+        <div>
+          <h2 class="text-[#7DF9FF] text-xl font-semibold mb-3 text-center">Niveles de Poder</h2>
+          <table class="w-full border border-[#4A3F35] text-sm text-left rounded-lg overflow-hidden">
+            <thead class="bg-[#4A3F35]/40">
+              <tr>
+                <th class="p-3">Nivel</th>
+                <th class="p-3">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3">Nivel 1 – Humano normal</td><td class="p-3">Sin poderes sobrenaturales</td></tr>
+              <tr><td class="p-3">Nivel 2 – Sensitivo</td><td class="p-3">Percibe energía o magia</td></tr>
+              <tr><td class="p-3">Nivel 3 – Aprendiz</td><td class="p-3">Comienza a controlar su poder</td></tr>
+              <tr><td class="p-3">Nivel 4 – Intermedio</td><td class="p-3">Realiza acciones mágicas menores</td></tr>
+              <tr><td class="p-3">Nivel 5 – Experto</td><td class="p-3">Control total de su poder</td></tr>
+              <tr><td class="p-3">Nivel 10 – Divino</td><td class="p-3">Poder absoluto, como Bill Cipher</td></tr>
+              <tr><td class="p-3">Nivel 11 – Sin poder</td><td class="p-3">Personaje sin ningún tipo de habilidad</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pueblos -->
+        <div>
+          <h2 class="text-[#7DF9FF] text-xl font-semibold mb-3 text-center">Pueblos</h2>
+          <table class="w-full border border-[#4A3F35] text-sm text-left rounded-lg overflow-hidden">
+            <thead class="bg-[#4A3F35]/40">
+              <tr>
+                <th class="p-3">ID</th>
+                <th class="p-3">Nombre</th>
+                <th class="p-3">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-3">1</td><td class="p-3">Gravity Falls</td><td class="p-3">El pueblo principal de la serie</td></tr>
+              <tr><td class="p-3">2</td><td class="p-3">Piedmont</td><td class="p-3">Ciudad natal de los gemelos Pines</td></tr>
+              <tr><td class="p-3">11</td><td class="p-3">Bosque Misterioso</td><td class="p-3">Lugar de origen de criaturas mágicas</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Espacio visual -->
+      <div class="h-10"></div>
+
+      <!-- Cuadro POST -->
+      <div class="max-w-4xl mx-auto w-full">
+        <div class="flex flex-1 gap-3 rounded-lg border border-[#4A3F35] bg-[#4A3F35]/20 p-6 flex-col">
+          <h2 class="text-white text-lg font-bold leading-tight text-center mb-2">Ejemplo de solicitud POST mediante el BODY</h2>
+          <pre class="text-[#7DF9FF] text-sm font-mono bg-black/30 p-4 rounded-md overflow-x-auto"><code>{
+  "nombre": "Pato - Cerdito",
+  "edad": 2,
+  "altura": 92,
+  "frase": "oing oing",
+  "imagen": "https://static.wikia.nocookie.net/gravityfalls/images/5/5f/Pato_3.png",
+  "id_tipo": 11,
+  "id_nivel": 11,
+  "id_pueblo": 11
+}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="flex flex-col gap-6 px-5 py-10 text-center bg-[#1A2E2A]">
+      <p class="text-[#F5F5DC] text-base">Proyecto API desarrollado por Geomer Simanca 🧩</p>
+    </footer>
+  </div>
+<script>
+    // 📦 Cuando se cargue el documento
+    document.addEventListener("DOMContentLoaded", async () => {
+        const contenedor = document.createElement("div");
+        contenedor.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 max-w-7xl mx-auto";
+        document.body.appendChild(contenedor);
+
+        try {
+        // 📡 Llamada a tu API
+        const res = await fetch("http://localhost:3000/personajes");
+        const json = await res.json();
+        const personajes = json.personajes;
+
+        // 🧱 Crear tarjeta por cada personaje
+        personajes.forEach(p => {
+            const card = document.createElement("div");
+            card.className = "group bg-[#4A3F35]/30 border border-[#4A3F35] flex flex-col gap-4 rounded-xl p-5 aspect-[3/4.5] transition-all duration-300 hover:border-[#00FFFF] hover:shadow-2xl hover:shadow-[#00FFFF]/20 hover:-translate-y-2";
+
+            card.innerHTML = `
+            <div class="bg-cover bg-center rounded-lg flex-grow" style="background-image: url('${p.imagen || ''}');"></div>
+            <div class="flex flex-col gap-2 text-white">
+                <h3 class="text-xl font-bold text-[#FFD700]">${p.nombre}</h3>
+                <p class="text-sm text-[#F5F5DC] italic">"${p.frase || 'Sin frase'}"</p>
+                <div class="text-xs text-[#F5F5DC] mt-2 space-y-1">
+                <p><strong class="text-[#7DF9FF]">Edad:</strong> ${p.edad || 'Desconocida'}</p>
+                <p><strong class="text-[#7DF9FF]">Tipo de Poder:</strong> ${p.tipo_de_poder?.nombre || 'N/A'}</p>
+                <p><strong class="text-[#7DF9FF]">Nivel de Poder:</strong> ${p.nivel_de_poder?.nombre || 'N/A'}</p>
+                <p><strong class="text-[#7DF9FF]">Origen:</strong> ${p.origen?.nombre || 'Desconocido'}</p>
+                </div>
+            </div>
+            `;
+
+            contenedor.appendChild(card);
+        });
+        } catch (error) {
+        console.error("Error al cargar personajes:", error);
+        contenedor.innerHTML = `<p class="text-red-500 text-center">Error al cargar los personajes 😞</p>`;
+        }
+    });
+</script>
+
+</body></html>
